@@ -56,9 +56,9 @@
 # 스크린샷
 
 <div>
-  <img width=200 src="https://user-images.githubusercontent.com/8046850/77849695-85e67800-7208-11ea-92c0-e07eeffc153c.png"> 
-  <img width=200 src="https://user-images.githubusercontent.com/8046850/77849698-88e16880-7208-11ea-997c-de966e990229.png">  
-  <img width=200 src="https://user-images.githubusercontent.com/8046850/77849702-8aab2c00-7208-11ea-9565-5acd54a3ad6b.png">
+  <img width=200 src="https://user-images.githubusercontent.com/8046850/79453372-967a5900-8024-11ea-81ae-2ba80c3f8253.PNG"> 
+  <img width=200 src="https://user-images.githubusercontent.com/8046850/79453364-94b09580-8024-11ea-90ea-c5920d38eba3.PNG">  
+  <img width=200 src="https://user-images.githubusercontent.com/8046850/79453368-95e1c280-8024-11ea-9b40-5784efb6999e.PNG">
 <div>
  
 # License
