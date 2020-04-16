@@ -44,10 +44,10 @@ class SearchListAdapter(private val mapListener: MapListener<SearchItem>, privat
                                     true
                                 }
 
-                                R.id.shareData -> {
-                                    binding.item?.run { searchListListener.shareData(this) }
-                                    true
-                                }
+//                                R.id.shareData -> {
+//                                    binding.item?.run { searchListListener.shareData(this) }
+//                                    true
+//                                }
 
                                 R.id.deleteItem -> {
                                     binding.item?.run { searchListListener.deleteItem(this) }

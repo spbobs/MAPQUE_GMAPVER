@@ -149,7 +149,7 @@ class SearchListFragment(private val mapListener: MapListener<SearchItem>?) :
                     object :
                         SearchListListener<SearchItem> {
                         override fun shareData(item: SearchItem) {
-                            searchListViewModel.shareData(activity as MainActivity, item)
+//                            searchListViewModel.shareData(activity as MainActivity, item)
                         }
 
                         override fun deleteItem(item: SearchItem) {

@@ -22,7 +22,7 @@
     <!-- SearchListFragment -->
     <string name="searchlist_query_hint">검색어를 입력하세요.</string>
     <string name="searchlist_title">지금까지 검색한 목록입니다</string>
-    <string name="searchlist_address_title">선택한 주소 :</string>
+    <string name="searchlist_address_title">주소 :</string>
     <string name="searchlist_date_title">검색 시간 :</string>
     <string name="searchlist_refreshall_btn_title">전체 목록 보기</string>
 

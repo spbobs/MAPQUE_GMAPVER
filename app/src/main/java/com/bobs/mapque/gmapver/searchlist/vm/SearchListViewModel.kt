@@ -71,17 +71,6 @@ class SearchListViewModel(private val source: SearchListDataSource) : BaseViewMo
     }
 
     fun shareData(context: Context, searchItem: SearchItem) {
-        // 카카오링크로 공유
-//        addDisposable(
-//            Single.just(searchItem)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe({
-//
-//                }, {
-//                    loge("카카오링크 보내기 실패: ${it.message}")
-//                })
-//        )
     }
 
     fun delete(searchItem: SearchItem) {

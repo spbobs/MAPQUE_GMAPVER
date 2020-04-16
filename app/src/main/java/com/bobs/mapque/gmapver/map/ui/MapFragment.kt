@@ -26,6 +26,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.MapsInitializer
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import ir.mirrajabi.searchdialog.SimpleSearchDialogCompat
 import ir.mirrajabi.searchdialog.core.SearchResultListener
@@ -49,6 +50,8 @@ class MapFragment : Fragment() {
         }
     }
 
+    private val COMMON_ZOOM: Float = 16f
+
     private var rootView: View? = null
     private var gMapView: MapView? = null
     private var gMap: GoogleMap? = null
@@ -60,6 +63,8 @@ class MapFragment : Fragment() {
 
     private var searchQuery: String? = null
     private var floatingAddress: String? = null
+
+    private var curMarker: Marker? = null
 
     val prefs: SharedPreferences by inject()
     var isFirstOpenHelpDialog by prefs.boolean("", false)
@@ -113,6 +118,8 @@ class MapFragment : Fragment() {
                         val addressName = selectedAddress!!.getAddressLine(0)
 
                         curlocation = selectedAddress
+
+                        showLoading()
 
                         // y가 latitude, x가 longitude
                         moveMap(
@@ -180,6 +187,8 @@ class MapFragment : Fragment() {
 
         lastLocationBtn.run {
             setOnClickListener {
+                showLoading()
+
                 // 마지막 검색 위치로 이동
                 curlocation?.let {
                     moveMap(
@@ -220,20 +229,17 @@ class MapFragment : Fragment() {
         }
 
         gMap?.run {
-            addMarker(markerOptions)
+            curMarker?.remove()
+
+            curMarker = addMarker(markerOptions)
             moveCamera(CameraUpdateFactory.newLatLng(latLng))
-            animateCamera(CameraUpdateFactory.zoomTo(19f))
+            animateCamera(CameraUpdateFactory.zoomTo(COMMON_ZOOM))
             setOnMarkerClickListener { marker ->
                 activity?.let { activity ->
                     MaterialDialog(activity).show {
                         title(text = marker.title)
                         message(text = marker.snippet) {
                             messageTextView.gravity = Gravity.CENTER
-                        }
-                        positiveButton(text = getString(R.string.marker_dialog_sharebtn_title)) {
-                            // 구글 좌표 공유?
-
-                            it.dismiss()
                         }
                         negativeButton(text = getString(R.string.marker_dialog_cancelbtn_title)) {
 
@@ -252,6 +258,8 @@ class MapFragment : Fragment() {
             setOnCameraMoveListener {
                 resetSearchView()
             }
+
+            hideLoading()
         }
     }
 
@@ -269,8 +277,6 @@ class MapFragment : Fragment() {
             // 현재 위치를 세팅한다
             mapViewModel.getMyLocation(object : IResult<Location> {
                 override fun success(result: Location) {
-                    hideLoading()
-
                     moveMap(
                         LatLng(
                             result.latitude,

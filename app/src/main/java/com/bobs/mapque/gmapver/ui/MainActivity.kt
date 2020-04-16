@@ -83,6 +83,8 @@ class MainActivity : AppCompatActivity() {
                 override fun moveMap(item: SearchItem) {
                     loge("db 저장 좌표: latitude: ${item.searchLatitude}, longitude: ${item.searchLongitude}")
 
+                    showLoading()
+
                     mapFragment.moveMap(
                         LatLng(item.searchLatitude, item.searchLongitude),
                         item.searchQuery.toString(),

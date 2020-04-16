@@ -81,7 +81,7 @@ class GpsTracker(private val context: Context) {
     }
 
     fun getAddressName(location: Location): String{
-        var list: List<Address>? = null
+        var list: List<Address>? = listOf()
 
         try {
             list = geocoder.getFromLocation(location.latitude,location.longitude, 30)

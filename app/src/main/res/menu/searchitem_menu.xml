@@ -5,10 +5,6 @@
         android:title="지도로이동"/>
 
     <item
-        android:id="@+id/shareData"
-        android:title="공유"/>
-
-    <item
         android:id="@+id/deleteItem"
         android:title="삭제"/>
 </menu>
