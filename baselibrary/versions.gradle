@@ -4,7 +4,7 @@ ext.deps = [:]
 
 def versions = [:]
 versions.activity = '1.1.0'
-versions.android_gradle_plugin = '3.6.2'
+versions.android_gradle_plugin = '4.2.2'
 versions.annotations = "1.0.0"
 versions.apache_commons = "2.5"
 versions.appcompat = "1.2.0-alpha02"
@@ -55,7 +55,7 @@ versions.search_dialog="1.2.4"
 versions.circular_progress_bar="3.0.3"
 versions.legacy_v4="1.0.0"
 versions.google_services="4.3.3"
-versions.firebase_crashlytics="2.0.0-beta03"
+versions.firebase_crashlytics= '2.0.0'
 ext.versions = versions
 
 def build_versions = [:]

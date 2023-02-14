@@ -142,7 +142,7 @@ class MapFragment : Fragment() {
                     }).show()
             })
 
-        search_view.apply {
+        search_view.run {
             isSubmitButtonEnabled = true
 
             setOnQueryTextListener(object : OnQueryTextListener {
@@ -219,7 +219,6 @@ class MapFragment : Fragment() {
             }
         }
     }
-
 
     fun moveMap(latLng: LatLng, title: String, address: String) {
         val markerOptions = MarkerOptions().apply {
